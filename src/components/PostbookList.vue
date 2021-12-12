@@ -57,7 +57,6 @@
         text-align: left;
         max-width: 600px;
         margin: 0 auto;
-        border-top: 1px solid #cccccc;
     }
 
     .postbook-list-item {
