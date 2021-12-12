@@ -10,7 +10,7 @@
                     <div class="flex-container">
                         <div class="grid-left">
                             <div class="avatar">
-                                {{ post.userId }}
+                                {{ getAvatarContent(post.userId) }}
                             </div>
                         </div>
                         <div class="grid-right">
@@ -32,9 +32,18 @@
                 type: Array,
                 required: true,
             },
+            users: {
+                type: Array,
+                required: true
+            },
         },
-        setup(props) {
-console.log("PostbookList setup", props.posts)
+        methods: {
+            getAvatarContent(userId) {
+                const user = this.users.filter(user => { return user.id === userId; });
+                return user[0].username;
+            },
+        },
+        setup() {
             return {};
         },
     }

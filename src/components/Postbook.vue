@@ -6,6 +6,7 @@
     </h1>
     <postbook-list
         :posts="posts"
+        :users="users" 
     />
 </template>
     
@@ -27,9 +28,14 @@
             const getPosts = () => useApiGetQuery('posts');
             const { result: posts } = getPosts();
 
+            const getUsers = () => useApiGetQuery('users');
+            const { result: users } = getUsers();
+
             return {
                 posts,
                 getPosts,
+                users,
+                getUsers,
             }
         },
     })
