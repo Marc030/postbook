@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    import Postbook from './components/Postbook.vue'
+    import Postbook from '@/components/Postbook.vue';
 
     export default {
         name: 'App',
@@ -14,7 +14,7 @@
         },
         data() {
             return {
-                title: 'Postbook'
+                title: 'Postbook',
             }
         }
     }

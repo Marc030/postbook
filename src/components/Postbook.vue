@@ -4,14 +4,19 @@
     >
         {{ title }}
     </h1>
-    <pre>
-        {{ posts }}
-    </pre>
+    <postbook-list
+        :posts="posts"
+    />
 </template>
     
 <script>
     import { useApiGetQuery } from '@/lib/api/useApiGetQuery.js';
-    export default {
+    import PostbookList from '@/components/PostbookList.vue';
+
+    export default ({
+        components: { 
+            'postbook-list': PostbookList, 
+        },
         props: {
             title: {
                 type: String,
@@ -27,10 +32,10 @@
                 getPosts,
             }
         },
-    }
+    })
 </script>
     
-<style>
+<style scoped>
     .headline {
         color: #42b983;
     }
